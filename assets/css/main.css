@@ -1,14 +1,94 @@
-#div{
+
+span, select{
 
 display: block;
+margin-top: 1em;
+color: #555555;
+font-size:1em;
+}
+
+ #student_check{
+ 	margin-top: 1em;
+ 	margin-right: 1em;
+ }
+
+ #app_field_header{
+
+ 	font-size:3em;
+ 	font-style:bold;
+ 	letter-spacing: 0.5em
+ 	background: #888888;
+ 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+ 	margin-top:1em;
+
+ }
+
+ .diet_label{
+ 	font-size:0.8em;
+ 	display:block;
+ 	margin-top:0.8em;
+ }
+ .diet_check{
+ 	margin-right:0.8em;
+ }
+
+ #diet_other, #major{
+
+ 	margin-left:0.8em;
+
+ }
+
+ #major{
+ 	font-size:0.8em;
+ }
+
+ #major_label, #classification{
+ 	margin-left:1em;
+ 	margin-top:0.8em;
+}
+
+#classification{
+	margin:auto;
+	margin-left:1em;
+	
+}
+
+#student_info_wrapper{
+
+display:none;
 
 }
 
+#student_check{
+
+	margin-left:0.8em;
+}
+
+select{
+
+	display:inline;
+	margin-left:0.2em;
+	font-size: 0.8em;
+
+}
+
+#init_wrapper{
+height:50%;
+width:50%;
+margin: 0 auto;
+padding-top: 5%;
+padding-bottom: 5%;
+padding-left:15%;
+padding-right:15%;
+background: white;
+
+-webkit-box-shadow: 10px 10px 22px 5px rgba(0,0,0,0.44);
+-moz-box-shadow: 10px 10px 22px 5px rgba(0,0,0,0.44);
+box-shadow: 10px 10px 22px 5px rgba(0,0,0,0.44);
+}
+
 #header{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+position: relative;
 }
 
 #img{
@@ -22,16 +102,19 @@ vertical-align: middle;
 	font-size: 3.75vw;
 	margin-top: 8%;
 	color: #25C5CA;
-	font-family: sans-serif;
+	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	letter-spacing: 0.05em;
+	font-style: bold;
 	text-align: center;
 }
 
 #buttons_field{
 
-	margin-top: 8%;
+	padding-top: 8%;
+	padding-bottom: 8%;
 }
 
-.students, .sponsors{
+.students, .sponsors, #submit{
 background-color:white;
 font-size: 2.5vw;
 color: #888888;
@@ -42,15 +125,46 @@ border: 3px solid #888888;
 outline: 0;
 float: left;
 margin-left:15%;
+font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+letter-spacing: 0.1em;
 
--webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+-webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
 }
 
-.sponsors:hover{
+#submit{
 
-	background-color: #888888; /* Green */
+	height:1.5em;
+	margin:auto;
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+	float:none;
+	text-align:center;
+	border-radius: 0.3em;
+	border:none;
+	color:white;
+	background:#25C5CA;
+	box-shadow: 0px 1px 20px -6px rgba(0,0,0,0.64);
+}
+
+#submit:hover{
+
+	background-color:#49D0D6;
+	color:white;
+	box-shadow: 0px 8px 30px -6px rgba(0,0,0,0.64);
+
+
+}
+
+#submit:active{
+	box-shadow: 0px 2px 20px -6px rgba(0,0,0,0.64);
+}
+
+.sponsors:hover, .students:hover{
+
+	background-color: #888888;
     color: white;
+
 }
 
 .students{
@@ -58,6 +172,125 @@ margin-left:15%;
 	float:right;
 	margin-left:0%;
 	margin-right:15%;
-	opacity: 0.6;
-	cursor: not-allowed;
+}
+
+#app_field, #success_panel{
+
+display:none;
+width: 77%;
+margin: 0 auto;
+margin-top:1em;
+font-size:1.5em;
+padding: 1.5%;
+background: white;
+
+font-family: Arial;
+color: #555555;
+
+-webkit-box-shadow: 10px 10px 22px 5px rgba(0,0,0,0.44);
+-moz-box-shadow: 10px 10px 22px 5px rgba(0,0,0,0.44);
+box-shadow: 10px 0px 22px 5px rgba(0,0,0,0.44);
+}
+
+#success_panel{
+display:block;
+}
+
+#success_head{
+
+	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	letter-spacing: 0.05em;
+	font-size: 1.5em;
+
+}
+
+#success_message{
+	background:#B3F5B7;
+	border:3px solid #116416;
+	border-radius: 5px;
+	padding:1em;
+	color:#333333;
+}
+
+a{
+	text-decoration: none;
+	color:#01858B;
+}
+
+
+/*Extra shawdowing might be contributing to long download time*/
+
+#about_you, #experience, #team_info{
+	padding-top: 1.5em;
+	font-size: 2em;
+	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	letter-spacing: .05em;
+}
+
+#about_you{
+
+	padding-top:1em;
+}
+
+#prev_hack,  #prototype, #skills, #first_name, #last_name, #email, #team_name{
+
+border: .05em solid #555555;
+
+}
+
+#prev_hack,  #prototype, #skills{
+
+	width:90%;
+	height: 5em;
+	border: .1em solid #555555;
+}
+
+#first_name, #last_name, #email{
+	width: 30%;
+	font:sans-serif;
+	height:1.5em;
+	padding-left:.5em;
+	font-size:1em;
+	font-family: Arial;
+	color:#555555;
+}
+#team_name{
+
+	margin-left:0.8em;
+	font-size:0.8em;
+
+}
+#team_name_label{
+	display:none;
+	margin-left: 1em;
+}
+
+#team_hint{
+	display:inline-block;
+	font-size:0.8em;
+	color:#01858B;
+	/*border: 1.5px solid #888888;*/
+	padding:0.4em;
+	margin-top:1em;
+	background:#eeeeee;
+	/*Glad to see you're bringing friends!
+	Make sure all teammates enter the same under "Team Name".
+	Names can be changed at a later date.*/
+
+}
+
+#footer{
+
+	background: #333333;
+	height: 5em;
+	width: 80%;
+	margin: 0 auto;
+	box-shadow: 10px 10px 22px 5px rgba(0,0,0,0.44);
+	display:none;
+}
+
+body{
+
+	background: #eeeeee;
+	width: 100%;
 }

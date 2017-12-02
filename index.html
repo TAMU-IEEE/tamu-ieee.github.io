@@ -1,4 +1,12 @@
 <!DOCTYPE HTML>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="assets/js/main.js"></script>
+</head>
 <html>
 
 <title>TAMUmake</title>
@@ -7,31 +15,106 @@
  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebasneueregular" type="text/css"/>
 
 <body>
-
+<div id="init_wrapper">
 <div id="header">
 <img id="logo" src="assets/img/logo.png" width="100%" height="50%">
 <div id="date">February 2018</div>
 <div id="buttons_field">
-
-<form method="get" action="CorporateSponsorshipPacket.pdf" target="_blank">
+<form method="get" action="CorporateSponsorshipPacket.pdf">
 <button class="sponsors" type="submit">Sponsors</button>
 </form>
-<button class="students" type="submit" title="Coming Soon!">Students</button>
+<button class="students" type="submit" title="Register Now!">Students</button>
+</div>
+</div>
+</div>
+
+
+<div id="app_field">
+<span id="app_field_header">Student Sign Up</span>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfuSkZ8hIC0tsD7Ga3egOvrbE8g6LHUaVawGr4gGD-kTfCfBQ/formResponse" method="POST" id="student_form" autocomplete="on" target="invisible" onSubmit="document.location.href='success.html';">
+<div id="about_you">About You</div>
+<span>First Name</span>
+<input type="text" id="first_name" name="entry.1564195317" value="" title="" required>
+<span>Last Name</span>
+<input type="text" id="last_name" name="entry.188856868" value="" title="" required>
+<span>Email</span>
+<input type="text" id="email" name="emailAddress" value="" title="" required>
+<span>T-Shirt Size
+<select name="entry.1631880350">
+<option value="xs">XS</option>
+<option value="s">S</option>
+<option value="m">M</option>
+<option value ="l">L</option>
+<option value="xl">XL</option>
+</select>
+</span>
+
+<span>I am a student<input name="tempName" type="checkbox" id="student_check"></span>
+<div id="student_info_wrapper">
+<span id="classification">Classification
+<select name="entry.1941605337">
+	<option value="Freshman">Freshman</option>
+	<option value="Sophmore">Sophmore</option>
+	<option value="Junior">Junior</option>
+	<option value="Senior">Senior</option>
+	<option value="Graduate">Graduate</option>
+</select>
+</span>
+
+<span id="major_label">Major<input type="text" id="major" palceholder="i.e. ECEN" name="entry.855338313"></span>
+</div>
+
+<span>Dietary Restrictions</span>
+<label class="diet_label" for="diet_check1"><input type="checkbox" class="diet_check" id="diet_check1" name="entry.1259586080">Vegetarian</label>
+<label class="diet_label" for="diet_check2"><input type="checkbox" class="diet_check" id="diet_check2" name="entry.575409877">Vegan</label>
+<label class="diet_label" for="diet_check3"><input type="checkbox" class="diet_check" id="diet_check3" name="entry.868590265">Halal</label>
+<label class="diet_label" for="diet_check4"><input type="checkbox" class="diet_check" id="diet_check4" name="entry.1366743171">Kosher</label>
+<label class="diet_label" for="diet_check5"><input type="checkbox" class="diet_check" id="diet_check5" name="entry.1033692480">Gluten-free</label>
+<label class="diet_label" for="diet_check6"><input type="checkbox" class="diet_check" id="diet_check6" name="entry.552827162">Nut Allergy</label>
+<label class="diet_label" for="diet_check6" style="display:inline-block;"><input type="checkbox" class="diet_check" id="diet_check6" value="Other">Other<input type="text" id = diet_other name="entry.1176861329" value=""></label>
+
+
+<div id="experience">Experience</div>
+<span>Have you participated in any previous hackathons?</span>
+<textarea id="prev_hack" name="entry.1051848489" value="" title="" required></textarea>
+<span>Describe any previous experience you have with prototyping an idea or design.</span>
+<textarea id="prototype" name="entry.1343346487" value="" title="" required></textarea>
+<span>Describe your engineering skillset. Do you have any skills relevant to hardware development?</span>
+<textarea id="skills" name="entry.897071587" value="" title="" required></textarea>
+<div id="team_info">Team Info</div>
+
+
+<span>I do not have a team I would like to enroll under   <input type="radio" id="team_no" name="entry.1871514837" value="" checked></span>
+
+<span>I have a team I would like to enroll under   <input type="radio" id="team_yes" name="entry.1871514837" value="on"></span>
+
+<span id="team_name_label">Team Name<input type="text" id="team_name" name="entry.1272072924" value="" title=""></span>
+
+
+<span id="team_hint">It's okay to not be on a team right now. We'll help you find one!</span>
+
+<button id="submit" type="submit">Submit</button>
+</form>
+
+<script>
+	function land(){
+		window.location = "https://www.google.com";
+	}
+</script>
+
+<iframe id="invisible" name="invisible" style="display:none;"></iframe>
 
 </div>
 
 
-
-</div>
-
-
-
-
-
+<div id="footer"></div>
+<!--If span gives you issues, just change to div-->
 
 
 </body>
+
 
 </html>
