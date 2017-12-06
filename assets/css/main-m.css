@@ -27,6 +27,7 @@ select {
 #diet_other,
 #major {
     color: #555555;
+    border: thin solid grey;
 }
 #diet_other{
     margin-left:0.8em;
@@ -88,7 +89,7 @@ vertical-align:middle;
     vertical-align: middle;
 }
 #date {
-    font-size: 1.5em;
+    font-size: 8vw;
     margin-top: 8%;
     color: #25C5CA;
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
@@ -104,12 +105,14 @@ vertical-align:middle;
 .sponsors,
 #submit {
     background-color: white;
-    font-size: 6vw;
+    font-size: 5vw;
     color: #888888;
     display: block;
-    height: 5%;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
     width: 30%;
     border: 3px solid #888888;
+    border-radius:0.5em;
     outline: 0;
     float: left;
     margin-left: 15%;
