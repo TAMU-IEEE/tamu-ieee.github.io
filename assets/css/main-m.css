@@ -105,25 +105,25 @@ vertical-align:middle;
 .sponsors,
 #submit {
     background-color: white;
-    font-size: 5vw;
+    font-size: 6vw;
     color: #888888;
     display: block;
     padding-top:0.5em;
     padding-bottom:0.5em;
     width: 30%;
     border: 3px solid #888888;
-    border-radius:0.5em;
     outline: 0;
     float: left;
     margin-left: 15%;
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     -webkit-transition-duration: 0.2s;
     /* Safari */
     
     transition-duration: 0.2s;
 }
 #submit {
+    padding: 0;
     height: 1.5em;
     margin: auto;
     margin-top: 1.5em;
