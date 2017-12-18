@@ -40,12 +40,27 @@ select {
     max-width: 50%;
 }
 #major_label,
-#classification {
+#classification,
+#school {
     margin-left: 1em;
-    margin-top: 0.8em;
+    margin-top: 1em;
     overflow: hidden;
     white-space: nowrap;
 }
+
+#MLH_share,
+#MLH_code
+{
+    font-size:0.7em;
+    max-width: 95%
+}
+
+#school_select,
+#school{
+    margin-top:1em;
+    max-width:12em;
+}
+
 #classification {
     margin: auto;
     margin-left: 1em;
@@ -157,7 +172,7 @@ vertical-align:middle;
 #app_field,
 #success_panel {
     display: none;
-    width: 97%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 1em;
     font-size: 1.5em;
@@ -178,16 +193,41 @@ vertical-align:middle;
     font-size: 1.5em;
 }
 #success_message {
-    background: #B3F5B7;
-    border: 3px solid #116416;
-    border-radius: 5px;
+    background: #eeeeee;/*B3F5B7*/
+    border: 0px solid #116416;
+    border-radius: 0px;
     padding: 1em;
-    color: #333333;
+    color: #01858B;
+    font-size:0.7em;
 }
-a {
+.sm_icon{
+    height:2em;
+    width:2em;
+    max-width:64px;
+    max-height:64px;
+    vertical-align: middle;
+    margin:auto;
+}
+#sm_wrapper{
+    margin-top:1em;
+    padding-bottom: 2em;
+     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+     letter-spacing: 0.1em;
+     color:#555555;
+     border:2px dashed #555555;
+     text-align: center;
+}
+
+.sm_link{
+    margin-top:2em;
+    display:block;
+}
+
+a{
     text-decoration: none;
     color: #01858B;
 }
+
 
 #about_you,
 #experience,
@@ -205,6 +245,7 @@ a {
 #skills,
 #first_name,
 #last_name,
+#phone_num,
 #email,
 #team_name {
     color: #555555;
@@ -219,6 +260,7 @@ a {
 }
 #first_name,
 #last_name,
+#phone_num,
 #email {
     width: 30%;
     font: sans-serif;
