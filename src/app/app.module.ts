@@ -15,6 +15,11 @@ import { AppComponent } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 
 import '../styles/styles.scss';
+import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
+
+import {
+  NgbModule
+} from '@ng-bootstrap/ng-bootstrap';
 
 import {
   LandingComponent,
@@ -23,6 +28,10 @@ import {
 import {
   RegistrationComponent,
 } from './registration/registration.component';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -57,7 +66,9 @@ type StoreType = {
       useHash: Boolean(history.pushState) === true,
       preloadingStrategy: PreloadAllModules
     }),
-
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.
