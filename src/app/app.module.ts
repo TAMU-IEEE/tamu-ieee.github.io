@@ -12,14 +12,20 @@ import { environment } from 'environments/environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 
 import '../styles/styles.scss';
 
+import {
+  LandingComponent,
+} from './landing/landing.component';
+
+import {
+  RegistrationComponent,
+} from './registration/registration.component';
+
 // Application wide providers
 const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
   AppState
 ];
 
@@ -36,6 +42,8 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
+    LandingComponent,
+    RegistrationComponent,
   ],
   /**
    * Import Angular's modules.
