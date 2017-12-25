@@ -1,35 +1,37 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 
-import { ModalService } from '../services';
+import {
+  AccountService,
+  ModalService,
+} from '../services';
+
+import {
+  Account,
+} from '../models';
+
 @Component({
   selector: 'landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css']
 })
-export class LandingComponent implements OnInit {
-  public signup: any = {};
+
+export class LandingComponent {
+  public signup: Account = new Account();
+  public signin: Account = new Account();
   private closeResult: string;
   private isUserLoggedIn: boolean = false;
-  
+
   constructor(
-    private afAuth: AngularFireAuth,
+    private accountService: AccountService,
     private modalService: ModalService,
     private router: Router,
-  ) {}
-
-  public ngOnInit() {
-    this.afAuth.authState.subscribe((user: any) => {
-      this.isUserLoggedIn = true;
-      this.modalService.closeModal();
-    });
+  ) {
+    this.subscribeLogin();
   }
 
   public open(content) {
-    this.logout();
     if (this.isUserLoggedIn) {
       this.router.navigate(['/profile']);
     } else {
@@ -38,34 +40,34 @@ export class LandingComponent implements OnInit {
   }
 
   public loginWithGoogle() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.accountService.loginWithGoogle();
   }
 
-  public logout() {
-    this.isUserLoggedIn = false;
-    this.afAuth.auth.signOut();
+  public loginUser(signin: Account) {
+    this.accountService.loginUser(signin).then( (result) => {
+      // TODO: Handle Redirect Here.
+    }).catch( (err) => {
+      // TODO: Handle Error Here.
+    });
   }
 
-  // public register() {
-  //   this.afAuth
-  //     .auth
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then(value => {
-  //       console.log('Success!', value);
-  //     })
-  //     .catch(err => {
-  //       console.log('Something went wrong:',err.message);
-  //     });    
-  // }
-
-  public registerUser(data: any) {
-    if (data['email'] && data['password']) {
-      this.afAuth.auth.createUserWithEmailAndPassword(data['email'], data['password'])
-      .then((value) => {
-        console.log(value);
-      }).catch((err) => {
-        console.log('Something went wrong.', err.message);
-      });
-    }
+  public registerUser(signup: Account) {
+    this.accountService.registerUser(signup).then( (result) => {
+      // TODO: Handle Redirect Here.
+    }).catch( (err) => {
+      // TODO: Handle Error Here.
+    });
   }
+
+  private subscribeLogin() {
+    this.accountService.subscribeAuthState().subscribe( (result) => {
+      if (this.accountService.isLoggedIn()) {
+        this.isUserLoggedIn = false;
+      } else {
+        this.isUserLoggedIn = true;
+      }
+      this.modalService.closeModal();
+    });
+  }
+
 }

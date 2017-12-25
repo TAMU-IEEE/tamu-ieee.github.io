@@ -37,14 +37,14 @@
     </button>
   </div>
   <div class="modal-body">
-    <form>
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(signin)">
       <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" required class="form-control" #email placeholder="Email">
+          <input type="email" required class="form-control" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="signin.email"/>
       </div>
       <div class="form-group">
           <label for="password">Password:</label>
-          <input type="password" required class="form-control" #password autocomplete="password" placeholder="Password">
+          <input type="password" required class="form-control" autocomplete="password" name="password" #password="ngModel" placeholder="Password" [(ngModel)]="signin.password">
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
     </form>

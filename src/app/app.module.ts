@@ -31,6 +31,7 @@ import {
 
 import {
   ModalService,
+  AccountService,
 } from './services';
 
 import { AngularFireModule } from 'angularfire2';
@@ -83,6 +84,7 @@ type StoreType = {
     environment.ENV_PROVIDERS,
     APP_PROVIDERS,
     ModalService,
+    AccountService,
   ]
 })
 export class AppModule {}
