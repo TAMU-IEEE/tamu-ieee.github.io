@@ -33,7 +33,7 @@ export class LandingComponent {
 
   public open(content) {
     if (this.isUserLoggedIn) {
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/registration']);
     } else {
       this.modalService.openModal(content);
     }
