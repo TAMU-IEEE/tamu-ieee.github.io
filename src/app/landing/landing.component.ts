@@ -20,8 +20,11 @@ import {
 export class LandingComponent {
   public signup: Account = new Account();
   public signin: Account = new Account();
+  @ViewChild('account') public accountModal;
+
   private closeResult: string;
   private isUserLoggedIn: boolean = false;
+  private shouldDisplayModal: boolean = false;
 
   constructor(
     private accountService: AccountService,
@@ -32,8 +35,9 @@ export class LandingComponent {
   }
 
   public open(content) {
+    this.shouldDisplayModal = true;
     if (this.isUserLoggedIn) {
-      this.router.navigate(['/registration']);
+      this.modalService.openModal(this.accountModal);
     } else {
       this.modalService.openModal(content);
     }
@@ -51,8 +55,18 @@ export class LandingComponent {
     });
   }
 
+  public logoutUser() {
+    this.accountService.logout();
+  }
+
+  public apply() {
+    this.modalService.closeModal();
+    this.router.navigate(['/registration']);
+  }
+
   public registerUser(signup: Account) {
     this.accountService.registerUser(signup).then( (result) => {
+      this.isUserLoggedIn = true;
       // TODO: Handle Redirect Here.
     }).catch( (err) => {
       // TODO: Handle Error Here.
@@ -61,12 +75,12 @@ export class LandingComponent {
 
   private subscribeLogin() {
     this.accountService.subscribeAuthState().subscribe( (result) => {
-      if (this.accountService.isLoggedIn()) {
-        this.isUserLoggedIn = false;
+      this.isUserLoggedIn = !this.accountService.isLoggedIn();
+      if (this.isUserLoggedIn && this.shouldDisplayModal) {
+        this.modalService.openModal(this.accountModal);
       } else {
-        this.isUserLoggedIn = true;
+        this.modalService.closeModal();
       }
-      this.modalService.closeModal();
     });
   }
 

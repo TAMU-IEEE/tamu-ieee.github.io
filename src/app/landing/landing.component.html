@@ -52,9 +52,24 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-danger" (click)="loginWithGoogle()"><i class="fa fa-google"></i> Google</button>
     <button type="button" class="btn btn-outline-dark" (click)="open(register)">Sign Up</button>
-    <button *ngIf="isUserLoggedIn" type="button" class="btn btn-outline-dark" (click)="logout()">Logout</button>
   </div>
 </ng-template>
+
+<ng-template #account let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Status</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <h4>Application Status: Not received.</h4>
+        <a (click)="apply()">Apply</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="logoutUser()">Logout</button>
+    </div>
+  </ng-template>
 
 <section id="main" class="container">
     <header>
