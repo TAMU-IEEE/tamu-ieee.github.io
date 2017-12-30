@@ -1988,10 +1988,10 @@ input[type="password"],
 input[type="email"],
 select,
 textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
+  // -moz-appearance: none;
+  // -webkit-appearance: none;
+  // -ms-appearance: none;
+  // appearance: none;
   background: #f8f8f8;
   border-radius: 6px;
   border: solid 1px #e5e5e5;
@@ -3124,6 +3124,16 @@ body.landing #page-wrapper {
   img {
     width: 95%;
   }
+}
+
+.submit-registration {
+  margin-top:15px;
+}
+
+.header {
+  border-bottom: solid 2px #e5e5e5;
+  display: inline-block;
+  margin: 10px;
 }
 
 .box-header {

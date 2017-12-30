@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <section id="registration">
     <h1>Student Sign Up</h1>
     <form>
@@ -18,4 +18,138 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </section>
-</div>
+</div> -->
+<section id="main" class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="header">Student Sign Up</h1>
+    </div>
+  </div>
+  <form>
+    <div class="box">
+      <h3 class="box-header">Information</h3>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 form-group">
+            <label>First Name:</label>
+            <input type="text" class="form-control" placeholder="First Name">
+          </div>
+          <div class="col-sm-12 col-md-6 form-group">
+            <label>Last Name:</label>
+            <input type="text" class="form-control" placeholder="Last Name">
+          </div>
+          <div class="col-sm-12 col-md-8 form-group">
+            <label>Email:</label>
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="col-sm-12 col-md-8 form-group">
+            <label>Phone Number:</label>
+            <input type="text" class="form-control" placeholder="Phone">
+          </div>
+          <div class="col-sm-12 col-md-8 form-group">
+            <label>T-Shirt Size: </label>
+            <select>
+              <option value="XS">Extra Small</option>
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+              <option value="XL">Extra Large</option>
+            </select>
+          </div>
+          <div class="col-sm-12">
+            <label>Student:</label>
+          </div>
+          <div class="col-sm-12 form-group">
+            <input type="checkbox" name="student" id="student">
+            <label class="form-check-label" for="student">I am a student</label>
+          </div>
+          <div class="col-sm-12">
+            <label>Dietary Restrictions:</label>
+          </div>
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                <input type="checkbox" checked>
+                <label class="form-check-label">Vegetarian</label>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                <input type="checkbox">
+                <label class="form-check-label">Vegan</label>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                <input type="checkbox">
+                <label class="form-check-label">Halal</label>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                <input type="checkbox">
+                <label class="form-check-label">Kosher</label>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                <input type="checkbox">
+                <label class="form-check-label">Gluten-free</label>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                <input type="checkbox">
+                <label class="form-check-label">Nut Allergy</label>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group">
+                <input type="checkbox">
+                <label class="form-check-label">Other</label>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="box">
+      <h3 class="box-header">Experience</h3>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label>Have you participated in any previous hackathons?</label>
+          <textarea></textarea>
+        </div>
+        <div class="col-sm-12 form-group">
+          <label>Describe any previous experience you have with prototyping an idea or design.</label>
+          <textarea></textarea>
+        </div>
+        <div class="col-sm-12 form-group">
+          <label>Describe your engineering skillset. Do you have any skills relevant to hardware development?</label>
+          <textarea></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <h3 class="box-header">Team Info</h3>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <input type="radio" id="noteam" name="team" checked/>
+          <label class="form-radio-label" for="noteam">I do not have a team I would like to enroll under.</label>
+        </div>
+        <div class="col-sm-12 form-group">
+          <input type="radio" id="yesteam" name="team"/>
+          <label class="form-radio-label" for="yesteam">I have a team I would like to enroll under.</label>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <h3 class="box-header">Terms and Conditions</h3>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <input type="checkbox">
+          <label class="form-check-label">I have read and agree to the MLH Code of Conduct.</label>
+        </div>
+        <div class="col-sm-12 form-group">
+          <input type="checkbox">
+          <label class="form-check-label">I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-12 submit-registration" >
+      <div class="row text-center justify-content-center">
+        <div class="col-sm-12 col-md-6">
+          <button class="button special fit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</section>
