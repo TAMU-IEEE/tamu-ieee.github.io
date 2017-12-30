@@ -1,4 +1,4 @@
-<!-- <ng-template #register let-c="close" let-d="dismiss">
+<ng-template #register let-c="close" let-d="dismiss">
     <div class="modal-header">
         <h4 class="modal-title">Create an Account</h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
@@ -56,50 +56,16 @@
   </div>
 </ng-template>
 
-<div class="container">
-    <section id="header">
-        <div id="logo-container">
-            <div class="row justify-content-center text-center">
-                <div class="col-sm-12 col-md-8">
-                    <img id="main-logo" src="/assets/img/logo.png" alt="logo" />
-                </div>
-                <div class="col-sm-12 col-md-8">
-                    <h2 id="date">February 16-17, 2018</h2>
-                </div>
-                <div class="col-sm-6" id="logo-buttons">
-                    <a class="btn btn-info btn-lg" href="/assets/CorporateSponsorshipPacket.pdf">Sponsors</a>
-                    <button class="btn btn-success btn-lg" (click)="open(login)">Students</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-</div> -->
-
 <section id="main" class="container">
     <header>
         <span class="image fit"><img src="/assets/img/logo.png" alt="" /></span>
         <h2>February 16-17, 2018</h2>
         <div class="details">
-        <a class="btn btn-info btn-lg" href="/assets/CorporateSponsorshipPacket.pdf">Sponsors</a>
-        <button class="btn btn-success btn-lg" (click)="open(login)">Students</button>
+            <a class="btn btn-info btn-lg" href="/assets/CorporateSponsorshipPacket.pdf">Sponsors</a>
+            <button class="btn btn-success btn-lg" (click)="open(login)">Students</button>
         </div>
-        <!-- <p>A generic page for every non-generic situation.</p> -->
     </header>
     <div class="box">
-        <!-- <span class="image featured"><img src="/assets/img/pic01.jpg" alt="" /></span> -->
-        <!-- <h3>This is a subheading</h3>
-        <p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
-        <div class="row">
-            <div class="6u 12u(mobilep)">
-                <h3>And now a subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-            </div>
-            <div class="6u 12u(mobilep)">
-                <h3>And another subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-            </div>
-        </div> -->
         <div class="row">
             <div class="col-sm-12">
                 <h2 class="box-header">FAQ</h2>
@@ -108,13 +74,17 @@
                 <h5>Who can attend?</h5>
                 <p>You can attend TAMUmake if you are a college student over 18 years old. This includes undergraduates and graduate students. You must provide your college ID at check-in.</p>
                 <h5>Why come to TAMUmake?</h5>
-                <p>Whether you are new to hackathons or a hackathon veteran, we welcome hackers of all levels of experience. For those who are new to hackathons, we will offer workshops and instructional videos to help you figure out a potential project. We will also have mentors and volunteers to guide you through your hardware hack.</p>
+                <p>Whether you are new to hackathons or a hackathon veteran, we welcome hackers of all levels of experience. For those who are new to hackathons, we will offer workshops and instructional videos to help you figure out a potential project.
+                    We will also have mentors and volunteers to guide you through your hardware hack.</p>
                 <h5>What should I bring?</h5>
-                <p>Yourself, your valid university ID, a form of identification proving you are over 18 years old, a laptop, chargers, toiletries, or anything else you believe you will need within the 24 hours. Firearms, weapons, alcohol, illegal drugs, and pwoer tools are not allowed. </p>
+                <p>Yourself, your valid university ID, a form of identification proving you are over 18 years old, a laptop, chargers, toiletries, or anything else you believe you will need within the 24 hours. Firearms, weapons, alcohol, illegal drugs,
+                    and pwoer tools are not allowed. </p>
                 <h5>Is there travel reimursement?</h5>
-                <p>We would like to provide opportunity for all hackers to attend TAMUmake. We are currently providing travel reimbursement on per case basis. We will not be providing reimbursements to college students in the College Station or Brian area. Devpost submissions will be required for reimbursements. We will require proof of transactions in order to reimburse.</p>
+                <p>We would like to provide opportunity for all hackers to attend TAMUmake. We are currently providing travel reimbursement on per case basis. We will not be providing reimbursements to college students in the College Station or Brian area.
+                    Devpost submissions will be required for reimbursements. We will require proof of transactions in order to reimburse.</p>
                 <h5>How much money will this cost me?</h5>
-                <p>Absolutely nothing! It is all free! TAMUmake will provide hardware, Wi-FI, meals, swag, workspace, and prizes! However, if you believe your project will utilize some special hardware, then you might need to purchase it yourself. Please checkout our list of hardware here.</p>
+                <p>Absolutely nothing! It is all free! TAMUmake will provide hardware, Wi-FI, meals, swag, workspace, and prizes! However, if you believe your project will utilize some special hardware, then you might need to purchase it yourself. Please
+                    checkout our list of hardware here.</p>
                 <h5>What do I wear?</h5>
                 <p>Wear whatever you are most comfortable in! There is no need to dress professionally, however you will need to be dressed within the MLH Code of Conduct.</p>
                 <h5>When is TAMUmake?</h5>
@@ -122,13 +92,15 @@
             </div>
             <div class="col-sm-12 col-lg-6">
                 <h5>What is a hackathon?</h5>
-                <p>A hackathon is an event where students build an idea into reality. TAMUmake is a hackathon that is geared more toward hardware hacking and learning new skills and coming up with creative solutions using technology. To assist all levels of hackers, we will provide mentorship, workshops, and tutorial videos. Beginners are welcome!</p>
+                <p>A hackathon is an event where students build an idea into reality. TAMUmake is a hackathon that is geared more toward hardware hacking and learning new skills and coming up with creative solutions using technology. To assist all levels
+                    of hackers, we will provide mentorship, workshops, and tutorial videos. Beginners are welcome!</p>
                 <h5>What are the rules?</h5>
                 <p>All work must be done at the event. You can only demo something you built. All attendees are required to abide by the MLH Code of Conduct.</p>
                 <h5>How do I register and when does registration open?</h5>
                 <p>Registration is open and you can register for an account using an email/password or use your Google account to authenticate. From there you can submit the overall application, team, and check your application status.</p>
                 <h5>How do teams work?</h5>
-                <p>Teams can be up to 5 members. If you do not have a team, you can check out our Facebook group. Hacking as a group is the best part of a hackathon. To create a team, complete your application and create your team then supply the team name to the remainder of your team. If you do not have a team, don't worry! We will have a team building event.</p>
+                <p>Teams can be up to 5 members. If you do not have a team, you can check out our Facebook group. Hacking as a group is the best part of a hackathon. To create a team, complete your application and create your team then supply the team name
+                    to the remainder of your team. If you do not have a team, don't worry! We will have a team building event.</p>
                 <h5>How do I volunteer at TAMUmake?</h5>
                 <p>Volunteer applications will go live very soon. Be sure to stay updated with our mailing list to get a reminder for the hackathon.</p>
                 <h5>Where is TAMUmake?</h5>
@@ -157,13 +129,27 @@
                 <h2 class="box-header">Partners</h2>
                 <div class="row justify-content-center">
                     <div class="col-sm-12 col-md-6 col-lg-3 sponsor">
-                        <a href="#"><img src="/assets/img/mlh-logo.png"/></a>
+                        <a href="#"><img src="/assets/img/mlh-logo.png" /></a>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-7 sponsor">
-                        <a href="#"><img src="/assets/img/ecen-logo.jpg"/></a>
+                        <a href="#"><img src="/assets/img/ecen-logo.jpg" /></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+        <li><a href="#" class="icon fa-slack"><span class="label">Slack</span></a></li>
+        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Copyright 2017 TAMUmake. All Rights Reserved.</li>
+    </ul>
+</footer>
