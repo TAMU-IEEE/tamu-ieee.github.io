@@ -23,6 +23,7 @@ import {
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+  public isSubmitting: boolean = false;
 
   @ViewChild('received') public receivedModal;
 
@@ -36,19 +37,20 @@ export class RegistrationComponent {
   ) {}
 
   public register(registration: Registration) {
-    console.log(registration);
-    // let uid = this.accountService.getCurrentUser().uid;
-    // let url = 'https://us-central1-tamum-c5fdd.cloudfunctions.net/register';
-    // let data = {application: registration, uid};
-    // this.http.post(url, data).subscribe( (result) => {
-    //   this.modalService.openModal(this.receivedModal).result.then( () => {
-    //     this.router.navigate(['']);
-    //   }, () => {
-    //     this.router.navigate(['']);
-    //   })
-    // }, (error) => {
-    //   console.log(error);
-    // });
+    this.isSubmitting = true;
+    let uid = this.accountService.getCurrentUser().uid;
+    let url = 'https://us-central1-tamum-c5fdd.cloudfunctions.net/register';
+    let data = {application: registration, uid};
+    this.http.post(url, data).subscribe( (result) => {
+      this.modalService.openModal(this.receivedModal).result.then( () => {
+        this.router.navigate(['']);
+      }, () => {
+        this.router.navigate(['']);
+      });
+    }, (error) => {
+      console.log(error);
+      this.isSubmitting = false;
+    });
   }
 
 }

@@ -114,15 +114,24 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <label>Have you participated in any previous hackathons?</label>
-          <textarea required name="experience1" [(ngModel)]="registration.experience1"></textarea>
+          <textarea required name="experience1" [(ngModel)]="registration.experience1" #experience1="ngModel"></textarea>
+          <div *ngIf="(experience1.pristine && experience1.touched) || (!experience1.valid && experience1.touched)" class="alert alert-danger input-alert">
+              Answer to this question is required.
+          </div>
         </div>
         <div class="col-sm-12 form-group">
           <label>Describe any previous experience you have with prototyping an idea or design.</label>
-          <textarea required name="experience2" [(ngModel)]="registration.experience2"></textarea>
+          <textarea required name="experience2" [(ngModel)]="registration.experience2" #experience2="ngModel"></textarea>
+          <div *ngIf="(experience2.pristine && experience2.touched) || (!experience2.valid && experience2.touched)" class="alert alert-danger input-alert">
+              Answer to this question is required.
+          </div>
         </div>
         <div class="col-sm-12 form-group">
           <label>Describe your engineering skillset. Do you have any skills relevant to hardware development?</label>
-          <textarea required name="experience3" [(ngModel)]="registration.experience3"></textarea>
+          <textarea required name="experience3" [(ngModel)]="registration.experience3" #experience3="ngModel"></textarea>
+          <div *ngIf="(experience3.pristine && experience3.touched) || (!experience3.valid && experience3.touched)" class="alert alert-danger input-alert">
+              Answer to this question is required.
+          </div>
         </div>
       </div>
     </div>
@@ -147,11 +156,11 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <input required type="checkbox" name="termsMLHConduct" id="termsMLHConduct" [(ngModel)]="registration.termsMLHConduct"> 
-          <label class="form-check-label" for="termsMLHConduct">I have read and agree to the <a target="_blank" href="https://google.com">MLH Code of Conduct</a>.</label>
+          <label class="form-check-label" for="termsMLHConduct">I have read and agree to the <a target="_blank" href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct</a>.</label>
         </div>
         <div class="col-sm-12 form-group">
           <input required type="checkbox" name="termsMLHContest" id="termsMLHContest" [(ngModel)]="registration.termsMLHContest">
-          <label class="form-check-label" for="termsMLHContest">I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
+          <label class="form-check-label" for="termsMLHContest">I agree to the terms of both the <a target="_blank" href="https://github.com/MLH/mlh-policies/blob/master/prize-terms-and-conditions/contest-terms.md">MLH Contest Terms and Conditions</a> and the <a target="_blank" href="https://github.com/MLH/mlh-policies/blob/master/privacy-policy.md">MLH Privacy Policy</a>. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
         </div>
       </div>
     </div>
@@ -159,7 +168,7 @@
     <div class="col-sm-12 submit-registration" >
       <div class="row text-center justify-content-center">
         <div class="col-sm-12 col-md-6">
-          <button [disabled]="!registrationForm.valid" class="button special fit">Submit</button>
+          <button [disabled]="!registrationForm.valid || isSubmitting" class="button special fit">Submit <i *ngIf="isSubmitting" class="fa fa-spinner fa-spin" style="font-size:24px"></i></button>
         </div>
       </div>
     </div>
