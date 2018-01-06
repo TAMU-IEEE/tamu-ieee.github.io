@@ -21,6 +21,8 @@ export class LandingComponent {
   public signup: Account = new Account();
   public signin: Account = new Account();
   public hasApplied: boolean = false;
+  public isStudentPending: boolean = false;
+
   @ViewChild('account') public accountModal;
 
   private closeResult: string;
@@ -36,6 +38,7 @@ export class LandingComponent {
   }
 
   public open(content) {
+    this.isStudentPending = true;
     this.shouldDisplayModal = true;
     if (this.isUserLoggedIn) {
         this.accountService.getAppliedStatus().subscribe( (result) => {
@@ -46,10 +49,12 @@ export class LandingComponent {
         }, (error) => {
           this.hasApplied = false;
         }, () => {
+          this.isStudentPending = false;
           this.modalService.openModal(this.accountModal);
         });
     } else {
       this.modalService.openModal(content);
+      this.isStudentPending = false;
     }
   }
 

@@ -27,18 +27,30 @@
           <div class="col-sm-12 col-md-6 form-group">
             <label>First Name:</label>
             <input type="text" required class="form-control" placeholder="First Name" name="firstName" #firstName="ngModel" [(ngModel)]="registration.firstName"/>
+            <div *ngIf="(firstName.pristine && firstName.touched) || (!firstName.valid && firstName.touched)" class="alert alert-danger input-alert">
+                First name is required.
+            </div>
           </div>
           <div class="col-sm-12 col-md-6 form-group">
             <label>Last Name:</label>
             <input type="text" required class="form-control" placeholder="Last Name" name="lastName" #lastName="ngModel" [(ngModel)]="registration.lastName"/>
+            <div *ngIf="(lastName.pristine && lastName.touched) || (!lastName.valid && lastName.touched)" class="alert alert-danger input-alert">
+                Last name is required.
+            </div>
           </div>
           <div class="col-sm-12 col-md-8 form-group">
             <label>Email:</label>
-            <input type="email" required class="form-control" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="registration.email"/>
+            <input type="email" required class="form-control" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="registration.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+            <div *ngIf="(email.pristine && email.touched) || (!email.valid && email.touched)" class="alert alert-danger input-alert">
+                Please enter a valid email.
+            </div>
           </div>
           <div class="col-sm-12 col-md-8 form-group">
             <label>Phone Number:</label>
             <input type="text" required class="form-control" placeholder="Phone Number" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="registration.phoneNumber"/>
+            <div *ngIf="(phoneNumber.pristine && phoneNumber.touched) || (!phoneNumber.valid && phoneNumber.touched)" class="alert alert-danger input-alert">
+                Phone number is required.
+            </div>
           </div>
           <div class="col-sm-12 col-md-8 form-group">
             <label>T-Shirt Size: </label>
@@ -102,15 +114,15 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <label>Have you participated in any previous hackathons?</label>
-          <textarea name="experience1" [(ngModel)]="registration.experience1"></textarea>
+          <textarea required name="experience1" [(ngModel)]="registration.experience1"></textarea>
         </div>
         <div class="col-sm-12 form-group">
           <label>Describe any previous experience you have with prototyping an idea or design.</label>
-          <textarea name="experience2" [(ngModel)]="registration.experience2"></textarea>
+          <textarea required name="experience2" [(ngModel)]="registration.experience2"></textarea>
         </div>
         <div class="col-sm-12 form-group">
           <label>Describe your engineering skillset. Do you have any skills relevant to hardware development?</label>
-          <textarea name="experience3" [(ngModel)]="registration.experience3"></textarea>
+          <textarea required name="experience3" [(ngModel)]="registration.experience3"></textarea>
         </div>
       </div>
     </div>
@@ -147,7 +159,7 @@
     <div class="col-sm-12 submit-registration" >
       <div class="row text-center justify-content-center">
         <div class="col-sm-12 col-md-6">
-          <button class="button special fit">Submit</button>
+          <button [disabled]="!registrationForm.valid" class="button special fit">Submit</button>
         </div>
       </div>
     </div>
