@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -35,7 +36,6 @@ import {
 } from './services';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Application wide providers
@@ -68,13 +68,13 @@ type StoreType = {
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === true,
       preloadingStrategy: PreloadAllModules
     }),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
     AngularFireAuthModule,
   ],
   /**

@@ -1,53 +1,48 @@
-<!-- <div class="container">
-  <section id="registration">
-    <h1>Student Sign Up</h1>
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </section>
-</div> -->
+<ng-template #received let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Received Application</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+
+    <div class="modal-body">
+      <label>We have received your application.</label>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="c('home')">Back to Home</button>
+    </div>
+</ng-template>
+
 <section id="main" class="container">
   <div class="row">
     <div class="col-sm-12">
       <h1 class="header">Student Sign Up</h1>
     </div>
   </div>
-  <form>
+  <form #registrationForm="ngForm" (ngSubmit)="register(registration)">
     <div class="box">
       <h3 class="box-header">Information</h3>
         <div class="row">
           <div class="col-sm-12 col-md-6 form-group">
             <label>First Name:</label>
-            <input type="text" class="form-control" placeholder="First Name">
+            <input type="text" required class="form-control" placeholder="First Name" name="firstName" #firstName="ngModel" [(ngModel)]="registration.firstName"/>
           </div>
           <div class="col-sm-12 col-md-6 form-group">
             <label>Last Name:</label>
-            <input type="text" class="form-control" placeholder="Last Name">
+            <input type="text" required class="form-control" placeholder="Last Name" name="lastName" #lastName="ngModel" [(ngModel)]="registration.lastName"/>
           </div>
           <div class="col-sm-12 col-md-8 form-group">
             <label>Email:</label>
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="email" required class="form-control" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="registration.email"/>
           </div>
           <div class="col-sm-12 col-md-8 form-group">
             <label>Phone Number:</label>
-            <input type="text" class="form-control" placeholder="Phone">
+            <input type="text" required class="form-control" placeholder="Phone Number" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="registration.phoneNumber"/>
           </div>
           <div class="col-sm-12 col-md-8 form-group">
             <label>T-Shirt Size: </label>
-            <select>
+            <select name="tshirt" #tshirt="ngModel" [(ngModel)]="registration.tshirt">
               <option value="XS">Extra Small</option>
               <option value="S">Small</option>
               <option value="M">Medium</option>
@@ -59,7 +54,7 @@
             <label>Student:</label>
           </div>
           <div class="col-sm-12 form-group">
-            <input type="checkbox" name="student" id="student">
+            <input type="checkbox" name="student" id="student" [(ngModel)]="registration.isStudent">
             <label class="form-check-label" for="student">I am a student</label>
           </div>
           <div class="col-sm-12">
@@ -68,32 +63,35 @@
           <div class="col-sm-12">
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                <input type="checkbox" checked>
-                <label class="form-check-label">Vegetarian</label>
+                <input type="checkbox" name="vegetarian" id="vegetarian" [(ngModel)]="registration.isVegetarian">
+                <label class="form-check-label" for="vegetarian">Vegetarian</label>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                <input type="checkbox">
-                <label class="form-check-label">Vegan</label>
+                <input type="checkbox" name="vegan" id="vegan" [(ngModel)]="registration.isVegan">
+                <label class="form-check-label" for="vegan">Vegan</label>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                <input type="checkbox">
-                <label class="form-check-label">Halal</label>
+                <input type="checkbox" name="halal" id="halal" [(ngModel)]="registration.isHalal">
+                <label class="form-check-label" for="halal">Halal</label>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                <input type="checkbox">
-                <label class="form-check-label">Kosher</label>
+                <input type="checkbox" name="kosher" id="isKosher" [(ngModel)]="registration.isKosher">
+                <label class="form-check-label" for="kosher">Kosher</label>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                <input type="checkbox">
-                <label class="form-check-label">Gluten-free</label>
+                <input type="checkbox" name="gluten" id="gluten" [(ngModel)]="registration.isGlutenFree">
+                <label class="form-check-label" for="gluten">Gluten-free</label>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                <input type="checkbox">
-                <label class="form-check-label">Nut Allergy</label>
+                <input type="checkbox" name="nut" id="nut" [(ngModel)]="registration.isNutAllergy">
+                <label class="form-check-label" for="nut">Nut Allergy</label>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4 form-group">
-                <input type="checkbox">
-                <label class="form-check-label">Other</label>
+                <input type="checkbox" name="other" id="other" [(ngModel)]="registration.isOtherAllergy">
+                <label class="form-check-label" for="other">Other</label>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 form-group" *ngIf="registration.isOtherAllergy">
+                <input class="form-control" placeholder="Other" type="text" name="otherDietValue" id="otherDietValue" [(ngModel)]="registration.otherDietaryRestriction">
               </div>
             </div>
           </div>
@@ -104,15 +102,15 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <label>Have you participated in any previous hackathons?</label>
-          <textarea></textarea>
+          <textarea name="experience1" [(ngModel)]="registration.experience1"></textarea>
         </div>
         <div class="col-sm-12 form-group">
           <label>Describe any previous experience you have with prototyping an idea or design.</label>
-          <textarea></textarea>
+          <textarea name="experience2" [(ngModel)]="registration.experience2"></textarea>
         </div>
         <div class="col-sm-12 form-group">
           <label>Describe your engineering skillset. Do you have any skills relevant to hardware development?</label>
-          <textarea></textarea>
+          <textarea name="experience3" [(ngModel)]="registration.experience3"></textarea>
         </div>
       </div>
     </div>
@@ -120,12 +118,15 @@
       <h3 class="box-header">Team Info</h3>
       <div class="row">
         <div class="col-sm-12 form-group">
-          <input type="radio" id="noteam" name="team" checked/>
+          <input type="radio" id="noteam" value="N" name="hasTeam" [(ngModel)]="registration.hasTeam"/>
           <label class="form-radio-label" for="noteam">I do not have a team I would like to enroll under.</label>
         </div>
         <div class="col-sm-12 form-group">
-          <input type="radio" id="yesteam" name="team"/>
+          <input type="radio" id="yesteam" value="Y" name="hasTeam" [(ngModel)]="registration.hasTeam"/>
           <label class="form-radio-label" for="yesteam">I have a team I would like to enroll under.</label>
+        </div>
+        <div class="col-sm-12 col-md-6 form-group" *ngIf="registration.hasTeam ==='Y'">
+          <input type="text" placeholder="Team Name" id="teamcode" name="teamCode" name="teamCode" [(ngModel)]="registration.teamCode"/>
         </div>
       </div>
     </div>
@@ -133,12 +134,12 @@
       <h3 class="box-header">Terms and Conditions</h3>
       <div class="row">
         <div class="col-sm-12 form-group">
-          <input type="checkbox">
-          <label class="form-check-label">I have read and agree to the MLH Code of Conduct.</label>
+          <input required type="checkbox" name="termsMLHConduct" id="termsMLHConduct" [(ngModel)]="registration.termsMLHConduct"> 
+          <label class="form-check-label" for="termsMLHConduct">I have read and agree to the <a target="_blank" href="https://google.com">MLH Code of Conduct</a>.</label>
         </div>
         <div class="col-sm-12 form-group">
-          <input type="checkbox">
-          <label class="form-check-label">I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
+          <input required type="checkbox" name="termsMLHContest" id="termsMLHContest" [(ngModel)]="registration.termsMLHContest">
+          <label class="form-check-label" for="termsMLHContest">I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
         </div>
       </div>
     </div>

@@ -19,6 +19,7 @@ export class ModalService {
       this.currentOpenModalRef = undefined;
     }
     this.currentOpenModalRef = this.ngbModal.open(modal);
+    return this.currentOpenModalRef;
   }
 
   public closeModal() {
