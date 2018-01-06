@@ -3101,6 +3101,9 @@ body.landing #page-wrapper {
 
     #main > header p,
     #main > header h2 {
+      color: $text-color;
+    }
+    #main > header h3 {
       border-bottom: solid 2px #e5e5e5;
       color: #777;
       display: inline-block;

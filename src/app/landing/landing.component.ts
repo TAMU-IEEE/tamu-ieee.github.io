@@ -20,6 +20,7 @@ import {
 export class LandingComponent {
   public signup: Account = new Account();
   public signin: Account = new Account();
+  public hasApplied: boolean = false;
   @ViewChild('account') public accountModal;
 
   private closeResult: string;
@@ -37,7 +38,16 @@ export class LandingComponent {
   public open(content) {
     this.shouldDisplayModal = true;
     if (this.isUserLoggedIn) {
-      this.modalService.openModal(this.accountModal);
+        this.accountService.getAppliedStatus().subscribe( (result) => {
+          if (result.json()) {
+            this.hasApplied = true;
+            console.log('setting true...');
+          }
+        }, (error) => {
+          this.hasApplied = false;
+        }, () => {
+          this.modalService.openModal(this.accountModal);
+        });
     } else {
       this.modalService.openModal(content);
     }

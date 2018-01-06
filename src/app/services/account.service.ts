@@ -8,6 +8,9 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import {
+  Http,
+} from '@angular/http';
+import {
   Account,
 } from '../models';
 
@@ -18,6 +21,7 @@ export class AccountService {
 
   constructor(
     private afAuth: AngularFireAuth,
+    private http: Http,
   ) {
     this.fetchCurrentUserInfo();
   }
@@ -48,6 +52,11 @@ export class AccountService {
 
   public getCurrentUser() {
     return this.currentUser;
+  }
+
+  public getAppliedStatus() {
+    let url = 'https://us-central1-tamum-c5fdd.cloudfunctions.net/hasApplied?uid=' + this.currentUser.uid;
+    return this.http.get(url);
   }
 
   private fetchCurrentUserInfo() {
