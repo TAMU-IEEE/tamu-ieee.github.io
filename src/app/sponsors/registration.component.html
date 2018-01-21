@@ -30,8 +30,9 @@
 
 <section id="main" class="container">
   <div class="row">
+    <a [routerLink]="['/sponsors']">< Back</a>
     <div class="col-sm-12">
-      <h1 class="header">Student Sign Up</h1>
+      <h1 class="header">Sponsor Sign Up</h1>
     </div>
   </div>
   <form #registrationForm="ngForm" (ngSubmit)="register(registration)">
@@ -59,6 +60,29 @@
                 Please enter a valid email.
             </div>
           </div>
+          <div class="col-sm-12 col-md-6 form-group">
+            <label for="password">Password:</label>
+            <input type="password" required class="form-control" autocomplete="password" name="pass" #pass="ngModel" placeholder="Password" [(ngModel)]="registration.password">
+            <div *ngIf="(pass.pristine && pass.touched) || (!pass.valid && pass.touched)" class="alert alert-danger input-alert">
+                <div>
+                    Please enter a valid password.
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" required class="form-control" autocomplete="comfirm-password" name="passConfirm" #passConfirm="ngModel" placeholder="Confirm Password" [(ngModel)]="registration.confirmPassword">
+            <div *ngIf="(registration.password !== registration.confirmPassword && passConfirm.touched)" class="alert alert-danger input-alert">
+                Passwords do not match.
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-8 form-group">
+              <label>Company:</label>
+              <input type="text" required class="form-control" placeholder="Company Name" name="companyName" #companyName="ngModel" [(ngModel)]="registration.companyName"/>
+              <div *ngIf="(companyName.pristine && companyName.touched) || (!companyName.valid && companyName.touched)" class="alert alert-danger input-alert">
+                  Phone number is required.
+              </div>
+            </div>
           <div class="col-sm-12 col-md-8 form-group">
             <label>Phone Number:</label>
             <input type="text" required class="form-control" placeholder="Phone Number" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="registration.phoneNumber"/>
@@ -75,13 +99,6 @@
               <option value="L">Large</option>
               <option value="XL">Extra Large</option>
             </select>
-          </div>
-          <div class="col-sm-12">
-            <label>Student:</label>
-          </div>
-          <div class="col-sm-12 form-group">
-            <input type="checkbox" name="student" id="student" [(ngModel)]="registration.isStudent">
-            <label class="form-check-label" for="student">I am a student</label>
           </div>
           <div class="col-sm-12">
             <label>Dietary Restrictions:</label>
@@ -122,61 +139,6 @@
             </div>
           </div>
         </div>
-    </div>
-    <div class="box">
-      <h3 class="box-header">Experience</h3>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <label>Have you participated in any previous hackathons?</label>
-          <textarea required name="experience1" [(ngModel)]="registration.experience1" #experience1="ngModel"></textarea>
-          <div *ngIf="(experience1.pristine && experience1.touched) || (!experience1.valid && experience1.touched)" class="alert alert-danger input-alert">
-              Answer to this question is required.
-          </div>
-        </div>
-        <div class="col-sm-12 form-group">
-          <label>Describe any previous experience you have with prototyping an idea or design.</label>
-          <textarea required name="experience2" [(ngModel)]="registration.experience2" #experience2="ngModel"></textarea>
-          <div *ngIf="(experience2.pristine && experience2.touched) || (!experience2.valid && experience2.touched)" class="alert alert-danger input-alert">
-              Answer to this question is required.
-          </div>
-        </div>
-        <div class="col-sm-12 form-group">
-          <label>Describe your engineering skillset. Do you have any skills relevant to hardware development?</label>
-          <textarea required name="experience3" [(ngModel)]="registration.experience3" #experience3="ngModel"></textarea>
-          <div *ngIf="(experience3.pristine && experience3.touched) || (!experience3.valid && experience3.touched)" class="alert alert-danger input-alert">
-              Answer to this question is required.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <h3 class="box-header">Team Info</h3>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <input type="radio" id="noteam" value="N" name="hasTeam" [(ngModel)]="registration.hasTeam"/>
-          <label class="form-radio-label" for="noteam">I do not have a team I would like to enroll under.</label>
-        </div>
-        <div class="col-sm-12 form-group">
-          <input type="radio" id="yesteam" value="Y" name="hasTeam" [(ngModel)]="registration.hasTeam"/>
-          <label class="form-radio-label" for="yesteam">I have a team I would like to enroll under.</label>
-        </div>
-        <div class="col-sm-12 col-md-6 form-group" *ngIf="registration.hasTeam ==='Y'">
-          <input type="text" placeholder="Team Name" id="teamcode" name="teamCode" name="teamCode" [(ngModel)]="registration.teamCode"/>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <h3 class="box-header">Terms and Conditions</h3>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <input required type="checkbox" name="termsMLHConduct" id="termsMLHConduct" [(ngModel)]="registration.termsMLHConduct"> 
-          <label class="form-check-label" for="termsMLHConduct">I have read and agree to the <a target="_blank" href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct</a>.</label>
-        </div>
-        <div class="col-sm-12 form-group">
-          <input required type="checkbox" name="termsMLHContest" id="termsMLHContest" [(ngModel)]="registration.termsMLHContest">
-          <label class="form-check-label" for="termsMLHContest">I agree to the terms of both the <a target="_blank" href="https://github.com/MLH/mlh-policies/blob/master/prize-terms-and-conditions/contest-terms.md">MLH Contest Terms and Conditions</a> and the <a target="_blank" href="https://github.com/MLH/mlh-policies/blob/master/privacy-policy.md">MLH Privacy Policy</a>. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
-        </div>
-      </div>
     </div>
     
     <div class="col-sm-12 submit-registration" >

@@ -31,6 +31,11 @@ import {
 } from './registration/registration.component';
 
 import {
+  SponsorsComponent,
+  SponsorRegistrationComponent,
+} from './sponsors';
+
+import {
   ModalService,
   AccountService,
 } from './services';
@@ -58,6 +63,8 @@ type StoreType = {
     AppComponent,
     LandingComponent,
     RegistrationComponent,
+    SponsorsComponent,
+    SponsorRegistrationComponent,
   ],
   /**
    * Import Angular's modules.

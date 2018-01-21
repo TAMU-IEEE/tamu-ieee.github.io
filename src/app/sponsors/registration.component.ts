@@ -18,11 +18,9 @@ import {
 } from '../models';
 
 @Component({
-  selector: 'registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent implements OnInit{
+export class SponsorRegistrationComponent implements OnInit{
   public isSubmitting: boolean = false;
 
   @ViewChild('received') public receivedModal;

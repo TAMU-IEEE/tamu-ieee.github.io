@@ -83,10 +83,44 @@
         <h2>February 16-17, 2018</h2>
         <h3>Location: Hildebrand Equine Complex</h3>
         <div class="details">
-            <a class="btn btn-info btn-lg" href="/assets/CorporateSponsorshipPacket.pdf">Sponsors</a>
+            <a class="btn btn-info btn-lg" [routerLink]="['sponsors']">Sponsors</a>
             <button class="btn btn-success btn-lg" [disabled]="isStudentPending" (click)="open(login)">Students <i *ngIf="isStudentPending" class="fa fa-spinner fa-spin" style="font-size:24px"></i></button>
         </div>
     </header>
+    <div *ngIf="showSchedule" class="box">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="box-header">Schedule</h2>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <h5>7:00 PM - Opening Ceremony</h5>
+                <h5>7:00 PM - Opening Ceremony</h5>
+                <h5>7:00 PM - Opening Ceremony</h5>
+                <h5>7:00 PM - Opening Ceremony</h5>
+                <h5>7:00 PM - Opening Ceremony</h5>
+                <h5>7:00 PM - Opening Ceremony</h5>
+
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <h5>12:00 PM - Next Day</h5>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showHardware" class="box">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="box-header">Available Hardware</h2>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <ul>
+                    <li>Breadboards</li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <p>For a full list of available hardware, <a href="https://docs.google.com/document/d/1jj-uPbxWjY-rsb06UJpdctZh6Gajdmn5CaJNcYyix7s" target="_blank">click here</a>.</p>
+            </div>
+        </div>
+    </div>
     <div class="box">
         <div class="row">
             <div class="col-sm-12">
@@ -99,8 +133,8 @@
                 <p>Whether you are new to hackathons or a hackathon veteran, we welcome hackers of all levels of experience. For those who are new to hackathons, we will offer workshops and instructional videos to help you figure out a potential project.
                     We will also have mentors and volunteers to guide you through your hardware hack.</p>
                 <h5>What should I bring?</h5>
-                <p>Yourself, your valid university ID, a form of identification proving you are over 18 years old, a laptop, chargers, toiletries, or anything else you believe you will need within the 24 hours. Firearms, weapons, alcohol, illegal drugs,
-                    and pwoer tools are not allowed. </p>
+                <p>Yourself, your valid university ID, a form of identification proving you are over 18 years old, a laptop, chargers, toiletries, unprogrammed hardware, or anything else you believe you will need within the 24 hours. Firearms, weapons, alcohol, illegal drugs,
+                    and power tools are not allowed. </p>
                 <h5>Is there travel reimursement?</h5>
                 <p>We would like to provide opportunity for all hackers to attend TAMUmake. We are currently providing travel reimbursement on per case basis. We will not be providing reimbursements to college students in the College Station or Brian area.
                     Devpost submissions will be required for reimbursements. We will require proof of transactions in order to reimburse.</p>
@@ -117,7 +151,7 @@
                 <p>A hackathon is an event where students build an idea into reality. TAMUmake is a hackathon that is geared more toward hardware hacking and learning new skills and coming up with creative solutions using technology. To assist all levels
                     of hackers, we will provide mentorship, workshops, and tutorial videos. Beginners are welcome!</p>
                 <h5>What are the rules?</h5>
-                <p>All work must be done at the event. You can only demo something you built. All attendees are required to abide by the MLH Code of Conduct.</p>
+                <p>All work must be done at the event. You can only demo something you built. All attendees are required to abide by the MLH Code of Conduct and TAMUmake rules. <a href="https://docs.google.com/document/d/1XF7tjoHOOgnrcIEWuAbbWejXZZveCasZNfCrVeTOYNs" target="_blank">Click here for the full list of rules.</a></p>
                 <h5>How do I register and when does registration open?</h5>
                 <p>Registration is open and you can register for an account using an email/password or use your Google account to authenticate. From there you can submit the overall application, team, and check your application status.</p>
                 <h5>How do teams work?</h5>
@@ -129,7 +163,9 @@
                 <p>TAMUmake will be hosted at the Hildebrand Equine Complex
                         (3240 F and B Road
                         College Station, TX 77843).
-                    </p>
+                </p>
+                <h5>How do I get to the Hildebrand Equine Complex?</h5>
+                <p>The location provides free parking throughout the event. Unfortunately, we will not be providing buses this year. If you have any questions about getting to event, please email us at <a href="mailto:ieeetamu.hackathon@gmail.com">ieeetamu.hackathon@gmail.com</a>.</p>
                 <h5>Other questions?</h5>
                 <p>Please email us at <a href="mailto:ieeetamu.hackathon@gmail.com">ieeetamu.hackathon@gmail.com</a> if you still have any questions! We will be happy ot answer them.</p>
             </div>
@@ -142,10 +178,36 @@
                 <h2 class="box-header">Sponsors</h2>
                 <div class="row justify-content-center">
                     <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
-                        <img src="/assets/img/tmobile-logo.png" />
+                        <img src="/assets/img/tmobile-logo.jpg" />
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
-                        <img src="/assets/img/ti-logo.png" />
+                        <img src="/assets/img/ti-logo.jpg" />
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
+                        <img src="/assets/img/ieee-logo.jpg" />
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
+                        <img src="/assets/img/npc-logo.jpg" />
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
+                        <img src="/assets/img/kind-logo.jpg" />
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
+                        <img src="/assets/img/sec-logo.png" />
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
+                        <img src="/assets/img/pepsi-logo.png" />
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
+                        <img src="/assets/img/gm-logo.jpg" />
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 sponsor">
+                        <img src="/assets/img/dell-logo.png" />
+                    </div>
+                    <div class="col-sm-12 sponsor-lg">
+                        <a href="https://ieee-tamu.org/" target="_blank">
+                            <img src="/assets/img/ieee-tamu-logo.jpeg" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -156,10 +218,10 @@
             <div class="col-sm-12">
                 <h2 class="box-header">Partners</h2>
                 <div class="row justify-content-center">
-                    <div class="col-sm-12 col-md-6 col-lg-3 sponsor">
+                    <div class="col-sm-12 col-md-6 col-lg-3 partner">
                         <a href="#"><img src="/assets/img/mlh-logo.png" /></a>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-7 sponsor">
+                    <div class="col-sm-12 col-md-6 col-lg-7 partner">
                         <a href="#"><img src="/assets/img/ecen-logo.jpg" /></a>
                     </div>
                 </div>
