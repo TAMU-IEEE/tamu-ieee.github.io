@@ -14,7 +14,7 @@ import {
 } from '../services';
 
 import {
-  Registration,
+  SponsorRegistration,
 } from '../models';
 
 @Component({
@@ -25,7 +25,7 @@ export class SponsorRegistrationComponent implements OnInit{
 
   @ViewChild('received') public receivedModal;
 
-  public registration: Registration = new Registration();
+  public registration: SponsorRegistration = new SponsorRegistration();
 
   constructor(
     private http: Http,
@@ -39,7 +39,7 @@ export class SponsorRegistrationComponent implements OnInit{
     // this.modalService.openModal(this.receivedModal);
   }
 
-  public register(registration: Registration) {
+  public register(registration: SponsorRegistration) {
     this.isSubmitting = true;
     let uid = this.accountService.getCurrentUser().uid;
     let url = 'https://us-central1-tamum-c5fdd.cloudfunctions.net/register';
