@@ -59,6 +59,11 @@ export class AccountService {
     return this.http.get(url);
   }
 
+  public getSponsorStatus(uid: string) {
+    let url = 'https://us-central1-tamum-c5fdd.cloudfunctions.net/isSponsor?uid=' + uid;
+    return this.http.get(url);
+  }
+
   private fetchCurrentUserInfo() {
     this.afAuth.authState.subscribe( (result) => {
       this.currentUser = result;

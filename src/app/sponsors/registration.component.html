@@ -1,6 +1,6 @@
 <ng-template #received let-c="close" let-d="dismiss">
     <div class="modal-header">
-        <h4 class="modal-title">Received Application</h4>
+        <h4 class="modal-title">Successfully registered</h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -8,7 +8,7 @@
 
     <div class="modal-body">
       <div>
-        <label style="font-size: 18px">We have received your application. Please follow us for updates!</label>
+        <label style="font-size: 18px">We have successfully registered your account. Please login to judge.</label>
       </div>
       <div class="register-logos">
         <a href="https://twitter.com/tamumake" target="_blank"><img src="/assets/img/twitter-logo.png"></a>
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-success" (click)="c('home')">Back to Home</button>
+        <button type="button" class="btn btn-success" (click)="c('home')">Back to Sponsors</button>
     </div>
 </ng-template>
 

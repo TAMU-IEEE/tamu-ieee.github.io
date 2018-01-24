@@ -14,7 +14,7 @@ import {
 } from '../services';
 
 import {
-  SponsorRegistration,
+  SponsorRegistration, Account,
 } from '../models';
 
 @Component({
@@ -40,20 +40,36 @@ export class SponsorRegistrationComponent implements OnInit{
   }
 
   public register(registration: SponsorRegistration) {
+    // console.log('Called register function...');
     this.isSubmitting = true;
-    let uid = this.accountService.getCurrentUser().uid;
-    let url = 'https://us-central1-tamum-c5fdd.cloudfunctions.net/register';
-    let data = {application: registration, uid};
-    this.http.post(url, data).subscribe( (result) => {
-      this.modalService.openModal(this.receivedModal).result.then( () => {
-        this.router.navigate(['']);
-      }, () => {
-        this.router.navigate(['']);
+    let account = new Account();
+    account.email = registration.email;
+    account.password = registration.password;
+
+    // console.log('Created account object...', account);
+    // console.log('Registering sponsor...');
+    this.accountService.registerUser(account).then( (res) => {
+      console.log('Successfully created user...', res);
+      let uid = res.uid;
+      let url = 'https://us-central1-tamum-c5fdd.cloudfunctions.net/sponsorRegister';
+      let data = {application: registration, uid};
+      data.application.password = null;
+
+      this.http.post(url, data).subscribe( (result) => {
+        // console.log('Successfully added metadata...');
+        this.modalService.openModal(this.receivedModal).result.then( () => {
+          this.router.navigate(['sponsors']);
+        }, () => {
+          this.router.navigate(['sponsors']);
+        });
+      }, (error) => {
+        console.log(error);
+        this.isSubmitting = false;
       });
-    }, (error) => {
-      console.log(error);
-      this.isSubmitting = false;
+    }, (err) => {
+      console.log('Unable to register sponsor', err);
     });
+
   }
 
 }

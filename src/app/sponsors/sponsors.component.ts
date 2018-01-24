@@ -36,7 +36,19 @@ export class SponsorsComponent implements OnInit {
     }
 
     public loginSponsor() {
-        this.modalService.closeModal();
-        this.modalService.openModal(this.judge);
+        this.accountService.loginUser(this.signin).then( (res) => {
+            console.log(res);
+            let uid = res.uid;
+            this.accountService.getSponsorStatus(uid).subscribe( (res) => {
+
+                if (res.json()) {
+                    this.modalService.openModal(this.judge);
+                } else {
+                    this.router.navigate(['/sponsors']);
+                }
+            });
+        }, (err) => {
+            console.log('Error logging in.');
+        });
     }
 }

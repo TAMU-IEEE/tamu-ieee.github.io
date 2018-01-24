@@ -15,5 +15,6 @@ export class SponsorRegistration {
     public isNutAllergy: boolean = false;
     public isOtherAllergy: boolean = false;
     public otherDietaryRestriction: string = '';
+    public isSponsor: boolean = true;
   }
   
