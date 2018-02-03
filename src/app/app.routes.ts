@@ -5,7 +5,7 @@ import { SponsorsComponent, SponsorRegistrationComponent } from 'app/sponsors';
 
 export const ROUTES: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'registration', component: RegistrationComponent},
+  // { path: 'registration', component: RegistrationComponent},
   { path: 'sponsors', component: SponsorsComponent},
   { path: 'sponsorSignup', component: SponsorRegistrationComponent},
   { path: '**', redirectTo: '' },
