@@ -94,6 +94,13 @@ export class LandingComponent {
       this.isUserLoggedIn = !this.accountService.isLoggedIn();
       if (this.isUserLoggedIn && this.shouldDisplayModal) {
         this.modalService.openModal(this.accountModal);
+        this.accountService.getAppliedStatus().subscribe( (result) => {
+          console.log('Previous: ', result.json());
+          if (result.json()) {
+            this.hasApplied = true;
+            console.log('setting true...');
+          }
+        });
       } else {
         this.modalService.closeModal();
       }
