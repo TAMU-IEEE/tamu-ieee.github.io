@@ -21,7 +21,7 @@ export class LandingComponent {
   public signin: Account = new Account();
   public hasApplied: boolean = false;
   public isStudentPending: boolean = false;
-  public showSchedule: boolean = false;
+  public showSchedule: boolean = true;
   public showHardware: boolean = true;
 
   @ViewChild('account') public accountModal;

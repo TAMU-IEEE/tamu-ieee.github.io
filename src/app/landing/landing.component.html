@@ -84,8 +84,9 @@
         <h2>February 16-17, 2018</h2>
         <h3>Location: Hildebrand Equine Complex</h3>
         <div class="details form-group">
-            <a class="btn btn-info btn-lg" [routerLink]="['sponsors']">Sponsors</a>
-            <button class="btn btn-success btn-lg" [disabled]="isStudentPending" (click)="open(login)">Students <i *ngIf="isStudentPending" class="fa fa-spinner fa-spin" style="font-size:24px"></i></button>
+            <a class="btn btn-secondary btn" href="#directions">Directions</a>
+            <a class="btn btn-info btn" [routerLink]="['sponsors']">Sponsors</a>
+            <button class="btn btn-success btn" [disabled]="isStudentPending" (click)="open(login)">Students <i *ngIf="isStudentPending" class="fa fa-spinner fa-spin" style="font-size:24px"></i></button>
         </div>
     </header>
     <div *ngIf="showSchedule" class="box">
@@ -94,16 +95,22 @@
                 <h2 class="box-header">Schedule</h2>
             </div>
             <div class="col-sm-12 col-lg-6">
-                <h5>7:00 PM - Opening Ceremony</h5>
-                <h5>7:00 PM - Opening Ceremony</h5>
-                <h5>7:00 PM - Opening Ceremony</h5>
-                <h5>7:00 PM - Opening Ceremony</h5>
-                <h5>7:00 PM - Opening Ceremony</h5>
-                <h5>7:00 PM - Opening Ceremony</h5>
-
+                <h4>Friday</h4>
+                <h5>6:30 PM - Student Check-In</h5>
+                <h5>7:30 PM - Dinner</h5>
+                <h5>7:45 PM - Opening Ceremony</h5>
+                <h5>8:00 PM - Hacking Starts</h5>
             </div>
             <div class="col-sm-12 col-lg-6">
-                <h5>12:00 PM - Next Day</h5>
+                <h4>Saturday</h4>
+                <h5>12:00 AM - Midnight Snack</h5>
+                <h5>1:00 AM - Super Smash Bros Tournament</h5>
+                <h5>8:00 AM - Breakfast</h5>
+                <h5>12:00 PM - Lunch</h5>
+                <h5>4:00 PM - Cup Stacking</h5>
+                <h5>6:00 PM - Dinner</h5>
+                <h5>8:00 PM - Hacking Ended</h5>
+                <h5>8:45 PM - Closing Ceremony</h5>
             </div>
         </div>
     </div>
@@ -182,6 +189,9 @@
                 <p>Please email us at <a href="mailto:ieeetamu.hackathon@gmail.com">ieeetamu.hackathon@gmail.com</a> if you still have any questions! We will be happy ot answer them.</p>
             </div>
         </div>
+    </div>
+    <div class="box" id="directions">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13734.65849775005!2d-96.3700425!3d30.615221533242472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbe524b107003fbfd!2sHildebrand+Equine+Complex!5e0!3m2!1sen!2sus!4v1518393158116" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     <div class="box">
         <div class="row">
